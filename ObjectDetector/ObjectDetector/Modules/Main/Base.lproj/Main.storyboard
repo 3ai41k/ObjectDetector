@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s3u-p8-lMu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,9 +16,54 @@
                     <view key="view" contentMode="scaleToFill" id="H7R-Lz-Oun">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-BP-l6W" customClass="CaptureView" customModule="ObjectDetector" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="600"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="mjE-Ix-a3G"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6QD-FS-LNm">
+                                <rect key="frame" x="0.0" y="652" width="414" height="244"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="w8v-EN-PUK">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEA-me-57z">
+                                            <rect key="frame" x="16" y="4" width="390" height="36"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="NEA-me-57z" secondAttribute="trailing" constant="8" id="Tan-8a-eYC"/>
+                                        <constraint firstItem="NEA-me-57z" firstAttribute="leading" secondItem="w8v-EN-PUK" secondAttribute="leading" constant="16" id="lbA-d3-pfG"/>
+                                        <constraint firstAttribute="bottom" secondItem="NEA-me-57z" secondAttribute="bottom" constant="4" id="yCP-fT-gK1"/>
+                                        <constraint firstItem="NEA-me-57z" firstAttribute="top" secondItem="w8v-EN-PUK" secondAttribute="top" constant="4" id="yHP-NG-Dbt"/>
+                                    </constraints>
+                                </view>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qXz-cN-1og"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6QD-FS-LNm" firstAttribute="top" secondItem="Aha-BP-l6W" secondAttribute="bottom" constant="8" id="7tH-Mm-giy"/>
+                            <constraint firstItem="qXz-cN-1og" firstAttribute="trailing" secondItem="6QD-FS-LNm" secondAttribute="trailing" id="9gj-zW-qFk"/>
+                            <constraint firstItem="Aha-BP-l6W" firstAttribute="leading" secondItem="qXz-cN-1og" secondAttribute="leading" id="BGo-M2-sNY"/>
+                            <constraint firstItem="qXz-cN-1og" firstAttribute="trailing" secondItem="Aha-BP-l6W" secondAttribute="trailing" id="NS3-da-Kar"/>
+                            <constraint firstItem="Aha-BP-l6W" firstAttribute="top" secondItem="qXz-cN-1og" secondAttribute="top" id="RPK-4L-c79"/>
+                            <constraint firstAttribute="bottom" secondItem="6QD-FS-LNm" secondAttribute="bottom" id="WYO-vV-0Cx"/>
+                            <constraint firstItem="6QD-FS-LNm" firstAttribute="leading" secondItem="qXz-cN-1og" secondAttribute="leading" id="XwB-ka-tUD"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="captureView" destination="Aha-BP-l6W" id="p0b-cS-cHa"/>
+                        <outlet property="tableView" destination="6QD-FS-LNm" id="gYj-8a-pfg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVp-EA-VNK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

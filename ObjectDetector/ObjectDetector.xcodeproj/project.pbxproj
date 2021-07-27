@@ -15,6 +15,16 @@
 		14FE778526B0920800216D50 /* DetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE778426B0920800216D50 /* DetectorViewController.swift */; };
 		14FE778C26B0943C00216D50 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE778B26B0943C00216D50 /* CaptureSession.swift */; };
 		14FE779126B097D900216D50 /* VideoCaptureInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE779026B097D900216D50 /* VideoCaptureInput.swift */; };
+		14FE779B26B0997C00216D50 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE779A26B0997C00216D50 /* XibView.swift */; };
+		14FE77A226B099B600216D50 /* UIView+AddFullSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77A126B099B600216D50 /* UIView+AddFullSubview.swift */; };
+		14FE77A526B099E500216D50 /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77A426B099E500216D50 /* CaptureView.swift */; };
+		14FE77A826B099FA00216D50 /* CaptureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14FE77A726B099FA00216D50 /* CaptureView.xib */; };
+		14FE77AC26B09AB600216D50 /* CaptureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77AB26B09AB600216D50 /* CaptureViewModel.swift */; };
+		14FE77B626B09F1900216D50 /* VideoCaptureOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77B526B09F1900216D50 /* VideoCaptureOutput.swift */; };
+		14FE77D126B0AC7B00216D50 /* MLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77D026B0AC7B00216D50 /* MLRequest.swift */; };
+		14FE77D526B0ACDC00216D50 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77D426B0ACDC00216D50 /* Resnet50.mlmodel */; };
+		14FE77D926B0ADC100216D50 /* DetectedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77D826B0ADC100216D50 /* DetectedObject.swift */; };
+		14FE77E226B0B1DA00216D50 /* DetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE77E126B0B1DA00216D50 /* DetectorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +38,16 @@
 		14FE778426B0920800216D50 /* DetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorViewController.swift; sourceTree = "<group>"; };
 		14FE778B26B0943C00216D50 /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
 		14FE779026B097D900216D50 /* VideoCaptureInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureInput.swift; sourceTree = "<group>"; };
+		14FE779A26B0997C00216D50 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		14FE77A126B099B600216D50 /* UIView+AddFullSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AddFullSubview.swift"; sourceTree = "<group>"; };
+		14FE77A426B099E500216D50 /* CaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		14FE77A726B099FA00216D50 /* CaptureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaptureView.xib; sourceTree = "<group>"; };
+		14FE77AB26B09AB600216D50 /* CaptureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewModel.swift; sourceTree = "<group>"; };
+		14FE77B526B09F1900216D50 /* VideoCaptureOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureOutput.swift; sourceTree = "<group>"; };
+		14FE77D026B0AC7B00216D50 /* MLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLRequest.swift; sourceTree = "<group>"; };
+		14FE77D426B0ACDC00216D50 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
+		14FE77D826B0ADC100216D50 /* DetectedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectedObject.swift; sourceTree = "<group>"; };
+		14FE77E126B0B1DA00216D50 /* DetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +80,7 @@
 		14FE776626B090A500216D50 /* ObjectDetector */ = {
 			isa = PBXGroup;
 			children = (
+				14FE779E26B0999C00216D50 /* Extensions */,
 				14FE778726B0926E00216D50 /* Core */,
 				14FE777C26B0911000216D50 /* Modules */,
 				14FE777D26B0911A00216D50 /* Resources */,
@@ -80,6 +101,7 @@
 		14FE777D26B0911A00216D50 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				14FE77B826B0A3DB00216D50 /* MLModels */,
 				14FE777026B090A900216D50 /* Assets.xcassets */,
 				14FE777526B090A900216D50 /* Info.plist */,
 			);
@@ -106,8 +128,10 @@
 		14FE778126B0916A00216D50 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				14FE776D26B090A500216D50 /* Main.storyboard */,
+				14FE779526B0991D00216D50 /* Views */,
 				14FE778426B0920800216D50 /* DetectorViewController.swift */,
+				14FE77E126B0B1DA00216D50 /* DetectorViewModel.swift */,
+				14FE776D26B090A500216D50 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -115,6 +139,7 @@
 		14FE778726B0926E00216D50 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				14FE779826B0996400216D50 /* UIKit */,
 				14FE778826B0927D00216D50 /* Services */,
 			);
 			path = Core;
@@ -131,7 +156,10 @@
 		14FE778E26B097B000216D50 /* CaptureSession */ = {
 			isa = PBXGroup;
 			children = (
+				14FE77D726B0ADA000216D50 /* Models */,
+				14FE77C026B0A65100216D50 /* MLRequest */,
 				14FE778F26B097BF00216D50 /* CaptureInputs */,
+				14FE77B326B09E8400216D50 /* CaptureOutputs */,
 				14FE778B26B0943C00216D50 /* CaptureSession.swift */,
 			);
 			path = CaptureSession;
@@ -143,6 +171,96 @@
 				14FE779026B097D900216D50 /* VideoCaptureInput.swift */,
 			);
 			path = CaptureInputs;
+			sourceTree = "<group>";
+		};
+		14FE779526B0991D00216D50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				14FE779626B0992700216D50 /* CaptureView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		14FE779626B0992700216D50 /* CaptureView */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77AB26B09AB600216D50 /* CaptureViewModel.swift */,
+				14FE77A426B099E500216D50 /* CaptureView.swift */,
+				14FE77A726B099FA00216D50 /* CaptureView.xib */,
+			);
+			path = CaptureView;
+			sourceTree = "<group>";
+		};
+		14FE779826B0996400216D50 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				14FE779926B0996E00216D50 /* UIViews */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		14FE779926B0996E00216D50 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				14FE779A26B0997C00216D50 /* XibView.swift */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		14FE779E26B0999C00216D50 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				14FE779F26B099A400216D50 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		14FE779F26B099A400216D50 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77A026B099A800216D50 /* UIView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		14FE77A026B099A800216D50 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77A126B099B600216D50 /* UIView+AddFullSubview.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		14FE77B326B09E8400216D50 /* CaptureOutputs */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77B526B09F1900216D50 /* VideoCaptureOutput.swift */,
+			);
+			path = CaptureOutputs;
+			sourceTree = "<group>";
+		};
+		14FE77B826B0A3DB00216D50 /* MLModels */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77D426B0ACDC00216D50 /* Resnet50.mlmodel */,
+			);
+			path = MLModels;
+			sourceTree = "<group>";
+		};
+		14FE77C026B0A65100216D50 /* MLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77D026B0AC7B00216D50 /* MLRequest.swift */,
+			);
+			path = MLRequest;
+			sourceTree = "<group>";
+		};
+		14FE77D726B0ADA000216D50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14FE77D826B0ADC100216D50 /* DetectedObject.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,6 +323,7 @@
 				14FE777426B090A900216D50 /* LaunchScreen.storyboard in Resources */,
 				14FE777126B090A900216D50 /* Assets.xcassets in Resources */,
 				14FE776F26B090A500216D50 /* Main.storyboard in Resources */,
+				14FE77A826B099FA00216D50 /* CaptureView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,10 +335,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				14FE776826B090A500216D50 /* AppDelegate.swift in Sources */,
+				14FE77B626B09F1900216D50 /* VideoCaptureOutput.swift in Sources */,
+				14FE77A226B099B600216D50 /* UIView+AddFullSubview.swift in Sources */,
 				14FE779126B097D900216D50 /* VideoCaptureInput.swift in Sources */,
+				14FE77A526B099E500216D50 /* CaptureView.swift in Sources */,
 				14FE776A26B090A500216D50 /* SceneDelegate.swift in Sources */,
+				14FE77D926B0ADC100216D50 /* DetectedObject.swift in Sources */,
+				14FE77AC26B09AB600216D50 /* CaptureViewModel.swift in Sources */,
 				14FE778526B0920800216D50 /* DetectorViewController.swift in Sources */,
+				14FE77D526B0ACDC00216D50 /* Resnet50.mlmodel in Sources */,
+				14FE779B26B0997C00216D50 /* XibView.swift in Sources */,
+				14FE77D126B0AC7B00216D50 /* MLRequest.swift in Sources */,
 				14FE778C26B0943C00216D50 /* CaptureSession.swift in Sources */,
+				14FE77E226B0B1DA00216D50 /* DetectorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
