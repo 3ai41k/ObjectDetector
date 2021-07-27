@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		14FE776826B090A500216D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE776726B090A500216D50 /* AppDelegate.swift */; };
 		14FE776A26B090A500216D50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE776926B090A500216D50 /* SceneDelegate.swift */; };
-		14FE776C26B090A500216D50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE776B26B090A500216D50 /* ViewController.swift */; };
 		14FE776F26B090A500216D50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FE776D26B090A500216D50 /* Main.storyboard */; };
 		14FE777126B090A900216D50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14FE777026B090A900216D50 /* Assets.xcassets */; };
 		14FE777426B090A900216D50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FE777226B090A900216D50 /* LaunchScreen.storyboard */; };
+		14FE778526B0920800216D50 /* DetectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE778426B0920800216D50 /* DetectorViewController.swift */; };
+		14FE778C26B0943C00216D50 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE778B26B0943C00216D50 /* CaptureSession.swift */; };
+		14FE779126B097D900216D50 /* VideoCaptureInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FE779026B097D900216D50 /* VideoCaptureInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14FE776426B090A500216D50 /* ObjectDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjectDetector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FE776726B090A500216D50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14FE776926B090A500216D50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14FE776B26B090A500216D50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		14FE776E26B090A500216D50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14FE777026B090A900216D50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14FE777326B090A900216D50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14FE777526B090A900216D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14FE778426B0920800216D50 /* DetectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorViewController.swift; sourceTree = "<group>"; };
+		14FE778B26B0943C00216D50 /* CaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
+		14FE779026B097D900216D50 /* VideoCaptureInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCaptureInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +60,9 @@
 		14FE776626B090A500216D50 /* ObjectDetector */ = {
 			isa = PBXGroup;
 			children = (
-				14FE777D26B0911A00216D50 /* Resources */,
+				14FE778726B0926E00216D50 /* Core */,
 				14FE777C26B0911000216D50 /* Modules */,
+				14FE777D26B0911A00216D50 /* Resources */,
 			);
 			path = ObjectDetector;
 			sourceTree = "<group>";
@@ -101,10 +106,43 @@
 		14FE778126B0916A00216D50 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				14FE776B26B090A500216D50 /* ViewController.swift */,
 				14FE776D26B090A500216D50 /* Main.storyboard */,
+				14FE778426B0920800216D50 /* DetectorViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		14FE778726B0926E00216D50 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				14FE778826B0927D00216D50 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		14FE778826B0927D00216D50 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				14FE778E26B097B000216D50 /* CaptureSession */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		14FE778E26B097B000216D50 /* CaptureSession */ = {
+			isa = PBXGroup;
+			children = (
+				14FE778F26B097BF00216D50 /* CaptureInputs */,
+				14FE778B26B0943C00216D50 /* CaptureSession.swift */,
+			);
+			path = CaptureSession;
+			sourceTree = "<group>";
+		};
+		14FE778F26B097BF00216D50 /* CaptureInputs */ = {
+			isa = PBXGroup;
+			children = (
+				14FE779026B097D900216D50 /* VideoCaptureInput.swift */,
+			);
+			path = CaptureInputs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +215,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14FE776C26B090A500216D50 /* ViewController.swift in Sources */,
 				14FE776826B090A500216D50 /* AppDelegate.swift in Sources */,
+				14FE779126B097D900216D50 /* VideoCaptureInput.swift in Sources */,
 				14FE776A26B090A500216D50 /* SceneDelegate.swift in Sources */,
+				14FE778526B0920800216D50 /* DetectorViewController.swift in Sources */,
+				14FE778C26B0943C00216D50 /* CaptureSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2HS7MB89MW;
 				INFOPLIST_FILE = ObjectDetector/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,6 +389,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2HS7MB89MW;
 				INFOPLIST_FILE = ObjectDetector/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
