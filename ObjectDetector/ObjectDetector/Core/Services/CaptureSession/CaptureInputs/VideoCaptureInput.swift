@@ -10,7 +10,7 @@ import AVFoundation
 
 struct VideoCaptureInput: CaptureInputProtocol {
     
-    func getInfo() throws -> AVCaptureInput {
+    func getInput() throws -> AVCaptureInput {
         guard let device = AVCaptureDevice.default(for: .video) else { throw CaptureInputError.captureDevice }
         
         return try AVCaptureDeviceInput(device: device)
