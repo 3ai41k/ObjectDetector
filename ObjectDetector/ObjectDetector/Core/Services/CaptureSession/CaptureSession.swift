@@ -7,16 +7,34 @@
 
 import Foundation
 import AVFoundation
+import Vision
 
 enum CaptureInputError: Error {
     case captureDevice
 }
 
-protocol CaptureInputProtocol {
-    func getInfo() throws -> AVCaptureInput
+protocol CoreMLRequestProtocol {
+    func getRequest() throws -> VNCoreMLRequest
 }
 
-final class CaptureSession {
+protocol CaptureInputProtocol {
+    func getInput() throws -> AVCaptureInput
+}
+
+protocol CaptureOutputProtocol {
+    func getOutput() throws -> AVCaptureOutput
+}
+
+protocol CaptureSessionProtocol {
+    var session: AVCaptureSession { get }
+    
+    func addInput(captureInput: CaptureInputProtocol) throws
+    func addOutput(captureOutput: CaptureOutputProtocol) throws
+    
+    func run()
+}
+
+final class CaptureSession: CaptureSessionProtocol {
     
     // MARK: - Private protperties
     
@@ -31,7 +49,11 @@ final class CaptureSession {
     // MARK: - Public methods
     
     func addInput(captureInput: CaptureInputProtocol) throws {
-        session.addInput(try captureInput.getInfo())
+        session.addInput(try captureInput.getInput())
+    }
+    
+    func addOutput(captureOutput: CaptureOutputProtocol) throws {
+        session.addOutput(try captureOutput.getOutput())
     }
     
     func run() {
